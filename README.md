@@ -1,2 +1,2 @@
-![alt text](?https://github.com/1Rumah/Undangan-Ikbal-dan-Putri/blob/main/foto1%2520(4).jpegraw=true)
+![alt text](https://github.com/1Rumah/Undangan-Ikbal-dan-Putri/blob/main/foto1%2520(4).jpeg?raw=true)
 # Undangan-Ikbal-dan-Putri
