@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Undangan Ikbal & Putri</title>
+
+    <meta property="og:title" content="Undangan Pernikahan Ikbal & Putri" />
+    <meta property="og:description" content="Sabtu, 14 Juni 2025 diundang ke acara bahagia kami." />
+    <meta property="og:image" content="https://1rumah.github.io/Undangan-Ikbal-dan-Putri/foto1%20(2).jpeg" />
+    <meta property="og:url" content="https://1rumah.github.io/Undangan-Ikbal-dan-Putri/halaman2.html" />
+    <meta property="og:type" content="website" />
+
+    <style>
+        /* ... [CSS mu tetap] ... */
+    </style>
+</head>
+<body>
+    <div class="text-white-400">
+        <h2 class="text-2xl shimmer fade-in-left">SABTU 14 JUNI 2025</h2>
+    </div>
+
+    <div class="container">
+        <span>Kepada Yth: Bapak / Ibu</span>
+        <p><strong id="namaPenerima">Sahabat Tercinta</strong></p><br>
+        <p>Dengan hormat, kami mengundang Anda untuk hadir pada acara pernikahan kami.</p>
+
+        <!-- Tambahan: Tempat untuk menampilkan foto -->
+        <div id="fotoPersonal" style="margin-top:20px;"></div>
+
+        <button class="btn" onclick="bukaUndangan()">Buka Undangan</button>
+        
+        <!-- ... [Countdown tetap] ... -->
+    </div>
+
+    <!-- ... [Tailwind + konfigurasi tetap] ... -->
+
+    <script>
+        const countdownDate = new Date("June 14, 2025 00:00:00").getTime();
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = String(days).padStart(2, '0');
+            document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+            document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+            document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+
+            if (distance < 0) {
+                clearInterval(interval);
+                document.getElementById("days").innerText = "00";
+                document.getElementById("hours").innerText = "00";
+                document.getElementById("minutes").innerText = "00";
+                document.getElementById("seconds").innerText = "00";
+            }
+        }
+        const interval = setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+
+    <script>
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        const nama = getQueryParam('nama');
+        if (nama) {
+            document.getElementById('namaPenerima').textContent = nama;
+        }
+
+        function bukaUndangan() {
+            window.location.href = 'halaman2.html?nama=' + encodeURIComponent(nama || 'Sahabat Tercinta');
+        }
+
+        // Tambahan: tampilkan foto jika nama cocok
+        if (nama === 'Andini dan Omicay') {
+            const fotoDiv = document.getElementById('fotoPersonal');
+            const img = document.createElement('img');
+            img.src = 'foto1 (2).jpeg'; // pastikan file ini ada di lokasi yang benar
+            img.alt = 'Foto untuk Andini dan Omicay';
+            img.style.maxWidth = '100%';
+            img.style.borderRadius = '10px';
+            img.style.marginTop = '20px';
+            fotoDiv.appendChild(img);
+        }
+
+        function createFlower() {
+            const flower = document.createElement("div");
+            flower.classList.add("flower");
+            flower.style.left = Math.random() * 100 + "vw";
+            flower.style.animationDuration = Math.random() * 3 + 2 + "s";
+            document.body.appendChild(flower);
+            setTimeout(() => {
+                flower.remove();
+            }, 5000);
+        }
+        setInterval(createFlower, 300);
+    </script>
+</body>
+</html>
