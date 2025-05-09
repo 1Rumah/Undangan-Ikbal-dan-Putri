@@ -275,49 +275,92 @@ Atas kehadiran dan doa restunya kami ucapkan terima kasih Wassalammualaikum Waro
 </div>
 
 <!-- Galeri Kenangan -->
+<!-- Galeri Kenangan -->
 <div class="p-4">
-    <h2 class="text-3xl font-semibold text-center mt-8 text-black-400">Galeri Zoom</h2>
-    <div class="swiper-container mt-4">
-        <div class="swiper-wrapper">
-            <!-- Tambahkan 10 gambar di sini -->
-            <div class="swiper-slide">
-                <img src="foto1 (6).jpeg" class="gallery-image" alt="Foto 1">
-            </div>
-            <div class="swiper-slide">
-                <img src="foto1 (7).jpeg" class="gallery-image" alt="Foto 2">
-            </div>
-            <div class="swiper-slide">
-                <img src="foto1 (8).jpeg" class="gallery-image" alt="Foto 3">
-            </div>
-            <div class="swiper-slide">
-                <img src="foto1 (9).jpeg" class="gallery-image" alt="Foto 4">
-            </div>
-            <div class="swiper-slide">
-                <img src="foto1 (10).jpeg" class="gallery-image" alt="Foto 5">
-            </div>
-            <div class="swiper-slide">
-                <img src="foto1 (11).jpeg" class="gallery-image" alt="Foto 6">
-            </div>
-            <div class="swiper-slide">
-                <img src="foto1 (12).jpeg" class="gallery-image" alt="Foto 7">
-            </div>
-            <div class="swiper-slide">
-                <img src="foto1 (13).jpeg" class="gallery-image" alt="Foto 8">
-            </div>
-            <div class="swiper-slide">
-                <img src="foto1 (14).jpeg" class="gallery-image" alt="Foto 9">
-            </div>
-            <div class="swiper-slide">
-                <img src="foto1 (15).jpeg" class="gallery-image" alt="Foto 10">
-            </div>
-        </div>
-        <!-- Tombol Navigasi -->
-        <div class="slide-button-next"></div>
-        <div class="slide-button-prev"></div>
-        <!-- Pagination -->
-        <div class="slide-swiper-pagination"></div>
+  <h2 class="text-3xl font-semibold text-center mt-8 text-gray-800">Galeri Zoom</h2>
+  <div class="swiper-container mt-4">
+    <div class="swiper-wrapper">
+      <!-- Tambahkan 10 gambar di sini -->
+      <div class="swiper-slide">
+        <img src="foto1 (6).jpeg" class="gallery-image" alt="Foto 1">
+      </div>
+      <div class="swiper-slide">
+        <img src="foto1 (7).jpeg" class="gallery-image" alt="Foto 2">
+      </div>
+      <div class="swiper-slide">
+        <img src="foto1 (8).jpeg" class="gallery-image" alt="Foto 3">
+      </div>
+      <div class="swiper-slide">
+        <img src="foto1 (9).jpeg" class="gallery-image" alt="Foto 4">
+      </div>
+      <div class="swiper-slide">
+        <img src="foto1 (10).jpeg" class="gallery-image" alt="Foto 5">
+      </div>
+      <div class="swiper-slide">
+        <img src="foto1 (11).jpeg" class="gallery-image" alt="Foto 6">
+      </div>
+      <div class="swiper-slide">
+        <img src="foto1 (12).jpeg" class="gallery-image" alt="Foto 7">
+      </div>
+      <div class="swiper-slide">
+        <img src="foto1 (13).jpeg" class="gallery-image" alt="Foto 8">
+      </div>
+      <div class="swiper-slide">
+        <img src="foto1 (14).jpeg" class="gallery-image" alt="Foto 9">
+      </div>
+      <div class="swiper-slide">
+        <img src="foto1 (15).jpeg" class="gallery-image" alt="Foto 10">
+      </div>
     </div>
+
+    <!-- Tombol Navigasi -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+
+    <!-- Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
 </div>
+
+<style>
+/* Styling Galeri */
+.swiper-container {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.gallery-image:hover {
+  transform: scale(1.05);
+}
+
+/* SwiperJS Navigation & Pagination */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #FFD700;
+}
+
+.swiper-pagination-bullet {
+  background-color: #FFD700;
+}
+</style>
+
 
 
 <style>
@@ -352,8 +395,14 @@ Atas kehadiran dan doa restunya kami ucapkan terima kasih Wassalammualaikum Waro
         margin-bottom: 10px;
     }
 </style>
-    </style>
-   
+
+    <div class="comment-box">
+        <h2>Diskusi</h2>
+        <input type="text" id="nameInput" placeholder="Masukkan nama Anda...">
+        <textarea id="commentInput" placeholder="Tulis komentar..."></textarea>
+        <button onclick="addComment()">Kirim</button>
+        <div id="comments" class="comment-section"></div>
+    </div>
 
     <script>
         function addComment() {
@@ -441,14 +490,13 @@ Atas kehadiran dan doa restunya kami ucapkan terima kasih Wassalammualaikum Waro
     <h2 class="times-text-black text-3xl font-semibold text-center mt-8">Informasi Website & Aplikasi</h2>
     <p class="times-text-black text-lg text-secondary-foreground text-center">
     
-	 
-    
+
 	
     <a href="https://wa.me/62895428287742?text=Hallo%20kaka%20andi%20mau%20tanya%20websit%20dan%20aplikasinya%20dong" class="text-blue-500 hover:underline">
-      Klik disini untuk chat Admin ANDI
+      Klik disini untuk chat Admin 2 WhatsApp 
     </a><br>
     
-    
+   
     Email: 
     <a href="mailto:tokomfariz@gmail.com" class="text-blue-500 hover:underline">
         tokomfariz@gmail.com
@@ -459,13 +507,7 @@ Atas kehadiran dan doa restunya kami ucapkan terima kasih Wassalammualaikum Waro
 </div>
 <div id="comments"></div>
 	 </div>
- <div class="comment-box">
-        <h2>Diskusi</h2>
-        <input type="text" id="nameInput" placeholder="Masukkan nama Anda...">
-        <textarea id="commentInput" placeholder="Tulis komentar..."></textarea>
-        <button onclick="addComment()">Kirim</button>
-        <div id="comments" class="comment-section"></div>
-    </div>
+
 <!-- Styling menggunakan Tailwind CSS untuk layer dasar dan slide -->
 <style type="text/tailwindcss">
     @layer base {
@@ -687,43 +729,7 @@ document.getElementById("telegramForm").addEventListener("submit", function (eve
     setInterval(fetchLatestData, 10000);
 </script>
 	
-<style>
-/* Styling Galeri */
-.swiper-container {
-    width: 100%;
-    height: 300px;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-}
 
-.swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.gallery-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-}
-
-.gallery-image:hover {
-    transform: scale(1.05);
-}
-
-/* Styling SwiperJS */
-.swiper-button-next, .swiper-button-prev {
-    color: #FFD700;
-}
-
-.swiper-pagination-bullet {
-    background-color: #FFD700;
-}
-</style>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
